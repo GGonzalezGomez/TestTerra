@@ -18,3 +18,11 @@ steps:
     echo See https://aka.ms/yaml
     ls -tlr
   displayName: 'Run a multi-line script'
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: 'Terraform'
+    Contents: '**'
+    TargetFolder: '$(build.artifactstagingdirectory)/Terraform'
+    CleanTargetFolder: true
+    OverWrite: true
